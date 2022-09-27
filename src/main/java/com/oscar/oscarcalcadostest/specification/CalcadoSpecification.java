@@ -5,6 +5,9 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDateTime;
 
+/**
+ * A Specification é usada pelo JPA para montar querys dinâmicas. Essa specification usa o Bean Calcado para montar queires com parâmetros opcionais;
+ */
 public class CalcadoSpecification {
 
     public static Specification<Calcado> temCodCalcado (String codCalcado){
@@ -12,12 +15,16 @@ public class CalcadoSpecification {
     }
 
     public static Specification<Calcado> contemDescricao(String descricaoCalcado){
-        return  (root, query, criteriaBuilder) -> criteriaBuilder.like(root.get("descricaoCalcado"), descricaoCalcado);
-
-
+        return  (root, query, criteriaBuilder) -> criteriaBuilder.like(criteriaBuilder.lower(root.get("descricaoCalcado")), "%"+descricaoCalcado.toLowerCase()+"%");
     }
     public static Specification<Calcado> temDataCadastro (LocalDateTime dataCadastro){
         return  (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("dataCadastro"), dataCadastro);
+    }
+    public static Specification<Calcado> dataCadastroMaiorQue(LocalDateTime dataCadastro){
+        return  (root, query, criteriaBuilder) -> criteriaBuilder.greaterThan(root.get("dataCadastro"), dataCadastro);
+    }
+    public static Specification<Calcado> dataCadastroMenorQue (LocalDateTime dataCadastro){
+        return  (root, query, criteriaBuilder) -> criteriaBuilder.lessThan(root.get("dataCadastro"), dataCadastro);
     }
 
     public static Specification<Calcado> temPreco (Double precoCalcado){

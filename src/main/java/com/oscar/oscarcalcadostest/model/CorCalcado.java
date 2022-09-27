@@ -7,6 +7,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+/**
+ * Este Bean é uma Entity do JPA, responsável pelas operações na tabela tbl_cor_calcado
+ * @author YuriFernandes150
+ */
 @Entity
 @Table(name = "tbl_cor_calcado")
 @Getter

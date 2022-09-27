@@ -10,6 +10,11 @@ import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Este DTO é uma extensão da Entity Calcado, ele serve para executar operações com o banco de dados.<br>
+ * As Anotations @Getter e @Setter permitem a criação dos GetSet sem seração de código extra.
+ * @author YuriFernandes150
+ */
 @Getter
 @Setter
 public class CalcadoDTO {
@@ -32,6 +37,6 @@ public class CalcadoDTO {
     @NotNull
     private CategoriaCalcado categoriaCalcado;
     @NotNull
-    TamanhoCalcado tamanhoCalcado;
+    private TamanhoCalcado tamanhoCalcado;
 
 }
