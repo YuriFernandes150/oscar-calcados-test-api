@@ -31,7 +31,7 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 Após essa configuração, você poderá utilizar a API.
 
 ## Uso
-Essa API funciona através de diversas URLs de endpoints, você precisará enviar requisições para a API para utilizar as funçãoes CRUD.
+Essa API funciona através de diversas URLs de endpoints, você precisará enviar requisições para a API para utilizar as funções CRUD.
 A API funciona na porta ```8080```. Nesse caso utilizaremos como exemplo a API sendo hosteada na máquina local, assim , endpoint ficaria:
 ```
 http://localhost:8080/
@@ -87,7 +87,7 @@ Atualizando o registro de ID 1
 http://localhost:8080/tamanho-calcado/1
 ```
 
-Em ambos os casos, o mesmo formato de JSON é enviado, abaixo seguem exemplos de JSON. (Lembre-se que esses JSONs podem ser utilizados tanto para POST, quanto para PUT,mudando somente a URL do Endpoint).
+Em ambos os casos, o mesmo formato de JSON é enviado, abaixo seguem exemplos de JSON. (Lembre-se que esses JSONs podem ser utilizados tanto para POST, quanto para PUT, mudando somente a URL do Endpoint).
 
 #### Tamanho
 É necessário enviar um JSON válido para o EndPoint base de tamanho.
@@ -443,4 +443,4 @@ Nos retorna:
     "empty": false
 }
 ```
-Há também uma interface que interaje com essa API, você pode baixá-la [aqui.](https://github.com/YuriFernandes150/oscar-calcados-interface/releases)
+Há também uma interface que interage com essa API, você pode baixá-la [aqui.](https://github.com/YuriFernandes150/oscar-calcados-interface/releases)
